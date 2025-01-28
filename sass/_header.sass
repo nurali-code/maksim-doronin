@@ -1,0 +1,143 @@
+.header
+	padding: 33px 0
+	position: relative
+	z-index: 9999
+	.logo
+		display: block
+		img
+			width: 100%
+	&-nav
+		margin-left: auto
+		a
+			display: block
+			padding: 15px
+			&:hover
+				font-weight: 600
+				text-decoration: underline
+
+	&-menu
+		position: fixed
+		top: 0
+		right: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0, 0, 0, .5)
+		overflow: hidden
+		transition: all ease .3s
+		opacity: 0
+		visibility: hidden
+		&.is_active
+			opacity: 1
+			visibility: visible
+			.header-list
+				transform: translateX(0)
+
+		.container
+			height: 100%
+
+	&-btn
+		width: 59px
+		height: 59px
+		margin-left: 63px
+		border-radius: 50%
+		background-color: var(--prime)
+		position: relative
+		z-index: 99999
+		display: inline-block
+		&:hover
+			background-color: #4440A3
+		span
+			display: block
+			width: 29px
+			height: 3px
+			border-radius: 3px
+			margin: 0 auto
+			background-color: var(--white)
+			position: relative
+			z-index: 1
+			transition: all ease .3s
+			&::before,
+			&::after
+				transition: all ease .3s
+				content: ''
+				display: block
+				width: 100%
+				height: 3px
+				position: absolute
+				background-color: var(--white)
+				border-radius: 3px
+				left: 0
+				top: 8px
+
+			&::after
+				top: -8px
+
+		&.is_active
+			span
+				background-color: rgba(0, 0, 0, 0)
+				&::before
+					top: 0
+					transform: rotate(45deg)
+				&::after
+					top: 0
+					transform: rotate(-45deg)
+
+	&-list
+		height: 100%
+		padding: 133px 79px
+		background-color: #141414
+		max-width: 50%
+		margin-left: auto
+		transition: transform ease .3s
+		position: relative
+		z-index: 1
+		list-style: none
+		transform: translateX(100%)
+		a
+			display: block
+			font-size: 20px
+			line-height: 24.38px
+			padding: 14px 0
+			&:hover
+				font-weight: 600
+				text-decoration: underline
+
+		@media screen and ( min-width: 720px )
+
+			&::before
+				content: ''
+				width: 200%
+				background-color: #141414
+				height: 100%
+				z-index: -11
+				position: absolute
+				pointer-events: none
+				top: 0
+				left: 0
+
+	@media screen and ( max-width: 1500px )
+		padding: 22px 0
+
+	@media screen and ( max-width: 720px )
+		padding: 35px 0
+		&-nav
+			display: none
+
+		.logo
+			max-width: 166px
+
+		&-menu
+			.container
+				padding: 0
+
+		&-btn
+			margin-left: auto
+
+		&-list
+			padding: 119px 15px 20px
+			background-color: #7E8796
+			min-width: 318px
+			a
+				font-size: 18px
+				padding: 12px 0
+				line-height: 21.94px

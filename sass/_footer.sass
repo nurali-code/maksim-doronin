@@ -1,0 +1,117 @@
+.footer
+    background-color: var(--violet)
+    padding: 80px 0 40px
+    input, textarea
+        background-color: var(--violet)
+
+    &__heading
+        font-weight: 700
+        margin: 0 0 44px
+
+    .col
+        width: 45.32%
+        max-width: 576px
+        &:nth-child(2)
+            text-align: right
+            max-width: 600px
+
+        p
+            margin: 0 0 40px
+
+    .t
+        &-acc
+            text-transform: uppercase
+
+    &__logo
+        margin-top: auto
+
+    .btn
+        margin-top: 80px
+
+    &-bottom
+        padding-top: 80px
+        width: 100%
+        font-weight: 700
+
+    @media screen and ( max-width: 1500px )
+        padding: 44px 0 20px
+        &-bottom
+            padding-top: 56px
+
+        .btn
+            margin-top: 40px
+
+    @media screen and ( max-width: 991px )
+        &__heading
+            font-size: 38px
+            line-height: 40px
+            margin-bottom: 24px
+
+        input
+            height: 62px
+            margin-bottom: 26px
+
+        textarea
+            height: 84px
+
+        .col
+            width: 41.76%
+            p
+                margin: 0 0 24px
+
+            &:nth-child(2)
+                width: 47%
+
+        &__logo 
+            max-width: 308px
+            margin-left: auto
+
+        .btn
+            width: 100%
+
+    @media screen and ( max-width: 720px )
+        padding: 40px 0
+        .container 
+            display: block
+        
+        input
+            height: 60px
+            margin-bottom: 20px
+
+        textarea
+            height: 80px
+
+        .btn 
+            margin-top: 52px
+
+        .col 
+            width: 100% !important
+            max-width: 100% !important
+            margin-bottom: 40px
+            p 
+                margin-bottom: 24px
+
+        &__logo 
+            max-width: 100%
+
+
+        &-bottom 
+            padding-top: 0
+            &>*
+                order: 4
+                min-width: 34%
+                &:first-child
+                    order: 3
+
+                &:nth-child(3)
+                    text-align: right
+                    order: 2
+
+                &:nth-child(2)
+                    order: 1
+
+                &:last-child
+                    text-align: right
+                    
+
+    

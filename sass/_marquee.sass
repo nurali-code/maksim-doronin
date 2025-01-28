@@ -1,0 +1,62 @@
+.marquee
+	padding: 0
+	text-align: center
+	position: relative
+	z-index: 1
+	width: 100%
+	overflow: hidden
+	opacity: .6
+	margin-bottom: 48px
+	&:last-child
+		margin-bottom: 0 !important
+
+	&-section
+		padding: 70px 0
+
+	&-content
+		list-style: none
+		overflow: hidden
+		flex-shrink: 0
+		&.--anim
+			animation: marquee 12s linear infinite
+			&.--reverce
+				animation: marquee 12s linear infinite reverse
+
+	&:hover
+		.marquee-content
+			animation-play-state: paused
+
+	li
+		margin: 0 60px
+
+	img
+		height: 90px
+		object-fit: contain
+
+	@media screen and ( max-width: 1500px )
+		padding: 0
+		margin-bottom: 12px
+
+		&-section
+			padding: 40px 0
+
+	@media screen and ( max-width: 992px )
+		opacity: .5
+		margin-bottom: 8px
+		&-section
+			padding: 20px 0
+
+		li
+			margin: 0 26px
+
+		img
+			height: 40px
+
+	@media screen and ( max-width: 992px )
+
+@keyframes marquee
+	from
+		transform: translateX(0)
+
+	to
+		transform: translateX(calc(-100%))

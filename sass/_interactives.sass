@@ -1,0 +1,219 @@
+.interactives
+    overflow: hidden
+    padding: 120px 0
+    .h1
+        text-align: center
+        padding: 0 var(--paddingContainer)
+
+    &-slider
+        margin: 0 auto
+
+    .slick-list:not(.item-imgs .slick-list)
+        padding: 180px 0
+
+    .item
+        width: 280px
+        margin: 0 45px
+        border-radius: 6.9px
+        position: relative
+
+        &__preview
+            width: 100%
+            aspect-ratio: 9/12.8573
+            object-fit: cover
+            border-radius: 6.9px
+
+        &__def
+            text-align: center
+
+        &-box
+            --item-width: 827px
+            background-color: var(--white)
+            width: var(--item-width)
+            border-radius: 8px
+            overflow: hidden
+            box-shadow: 0px 0px 15px 0px #0000001A
+
+        @media screen and ( min-width: 992px )
+            background-color: var(--white)
+            transition: filter ease .3s
+            &.blur
+                filter: blur(6px)
+
+            &-box
+                position: absolute
+                margin-left: calc(0px - var(--item-width) / 2 )
+                top: 50%
+                left: 50%
+                transition: all ease .3s
+                opacity: 0
+                visibility: hidden
+                transform: translateY(-50%) scale(.8)
+                &.--left
+                    left: calc( 0px - var(--paddingContainer) /2)
+                    margin-left: 0
+                &.--right
+                    left: auto
+                    right: calc( 0px - var(--paddingContainer) /2 )
+                    margin-left: 0
+
+            &-ic
+                position: relative
+                z-index: 1
+                width: 120px
+                height: 120px
+                margin-bottom: 48px
+                &::before
+                    content: ''
+                    display: block
+                    width: 100%
+                    height: 100%
+                    position: absolute
+                    top: 0
+                    left: 0
+                    z-index: -1
+                    border-radius: 50%
+                    background-color: var(--light-violet)
+
+                img
+                    display: block
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+
+            &:hover
+                z-index: 8888
+                .item-box
+                    opacity: 1
+                    visibility: visible
+                    transform: translateY(-50%) scale(1)
+
+        &-imgs
+            width: 54.546%
+            width: 432px
+            aspect-ratio: 9/14
+            &>*
+                &:last-child
+                    display: none
+
+            .slick
+                &-list,
+                &-track
+                    height: 100%
+
+        &__slide
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+        &-title
+            padding: 40px
+            flex: 1
+            width: 45.454%
+
+        &__heading
+            text-transform: uppercase
+            margin-bottom: 8px
+
+        .btn
+            margin-top: auto
+
+    @media screen and ( max-width: 1500px )
+        padding: 60px 0
+        .item
+            margin: 0 32px
+            &-box
+                --item-width: 632px
+
+            &-title
+                padding: 40px 32px
+
+            &-imgs
+                width: 332px
+            &-ic
+                margin-bottom: 20px
+                width: 100px
+                height: 100px
+
+            &__def
+                display: none
+
+        .slick-list:not(.item-imgs .slick-list)
+            padding: 120px 0 110px
+
+    @media screen and ( max-width: 992px )
+        padding: 40px 0
+        .h1
+            margin-bottom: 40px
+            text-align: left
+
+        &-slider
+            gap: 16px
+            padding: 0 var(--paddingContainer) 40px
+
+        .item
+            width: calc( 50% - 8px )
+            margin: 0
+            &__preview
+                display: none
+
+            &-box
+                width: 100%
+                display: block
+
+            &-imgs
+                width: 100%
+                aspect-ratio: 4/4.5
+
+            &-ic
+                display: none
+
+            &-title
+                padding: 16px
+                display: block
+                width: 100%
+
+            .btn
+                margin-top: 16px
+                width: 100%
+
+    @media screen and ( max-width: 700px )
+        .h1
+            margin-bottom: 24px
+            text-align: center
+
+        &-slider
+            gap: 16px
+            padding-bottom: 56px
+
+        .item
+            width: 100%
+
+.contact
+    width: fit-content
+    padding: 0 var(--paddingContainer)
+    margin: 0 auto
+    gap: 24px
+    & > *
+        margin: 0
+
+    mark
+        display: block
+
+    img
+        width: 80px
+        height: 80px
+
+    @media screen and ( max-width: 992px )
+        gap: 0
+        img
+            min-width: 40px
+            width: 40px
+            height: 40px
+
+        p
+            margin-right: 16px
+
+    @media screen and ( max-width: 700px )
+        mark
+            display: inline

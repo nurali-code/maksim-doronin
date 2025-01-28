@@ -1,0 +1,210 @@
+.modal
+	// display: none
+	position: fixed
+	top: 0
+	left: 0
+	height: 100%
+	width: 100vw
+	z-index: 999999
+	background-color: var(--haiti-80)
+	box-sizing: border-box
+	overflow: hidden
+
+	transition: all ease .25s
+	opacity: 0
+	visibility: hidden
+
+	&-img
+		min-width: 400px
+		position: relative
+		z-index: 1
+		width: 400px
+		background-color: var(--light-violet)
+		overflow: hidden
+		min-height: 600px
+		img
+			width: 150%
+			display: block
+			object-fit: cover
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%) rotate(-20deg)
+			z-index: 1
+			max-width: unset
+			border-radius: 50%
+
+	&__heading 
+		text-transform: uppercase
+
+	&-title
+		padding: 80px
+		width: calc( 100% - 400px )
+		-ms-overflow-style: none
+		scrollbar-width: none
+		&::-webkit-scrollbar
+			display: none
+			width: 0
+			height: 0
+
+	h4
+		margin-bottom: 40px
+
+	.btn
+		margin-top: 40px
+
+	&-content
+		width: 100%
+		max-width: 1280px
+		min-height: 100px
+		max-height: 98%
+		padding: 0
+		background-color: var(--white)
+		transition: all ease .4s
+		text-align: left
+		border-radius: 4px
+		margin: auto !important
+		position: absolute
+		-ms-overflow-style: none
+		scrollbar-width: none
+		&::-webkit-scrollbar
+			display: none
+			width: 0
+			height: 0
+
+		@media screen and ( min-width: 720px )
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -40%)
+			overflow: hidden
+			overflow-y: scroll
+
+	&__close
+		position: absolute
+		top: 12px
+		width: 40px
+		height: 40px
+		font-size: 42px
+		line-height: 40px
+		font-family: 'Inter', sans-serif
+		right: 12px
+
+	&__subheading
+		font-size: 48px
+		font-weight: 700
+		line-height: 40px
+		margin: 0 0 40px
+
+	&-form
+		margin-bottom: 88px
+
+	&-footer
+		width: 100%
+		a
+			font-size: 24px
+			font-weight: 700
+			line-height: 32px
+			letter-spacing: 0.02em
+
+		&>div
+			min-width: 62%
+
+	&.active
+		opacity: 1
+		visibility: visible
+		& > *
+			@media screen and ( min-width: 720px )
+				transform: translate(-50%, -50%)
+
+	@media screen and ( max-width: 1500px )
+		&-content
+			max-width: 920px
+
+		&-img
+			width: 300px
+			min-width: 300px
+			min-height: 480px
+
+		&-title
+			width: calc( 100% - 300px )
+			padding: 40px
+
+		&-form
+			margin-bottom: 50px
+
+		&__subheading
+			font-size: 30px
+			font-weight: 600
+			font-variation-settings: "wght" 600
+			line-height: 32px
+			margin-bottom: 18px
+
+		h4
+			margin-bottom: 28px
+
+		&-footer
+			&>div
+				min-width: 43%
+
+	@media screen and ( max-width: 991px )
+		&-content
+			max-width: 616px
+			padding: 57px 28px 26px
+
+		&-title
+			width: 100%
+			padding: 0
+		&-img
+			display: none
+
+	@media screen and ( max-width: 720px )
+		&-title
+			overflow-y: scroll
+			padding: 16px 0 36px
+			border-radius: 8px 8px 0 0
+
+		&__close
+			display: none
+
+		&-content
+			max-width: 100%
+			padding: 24px 16px 0
+			bottom: 0
+			max-height: calc( 100% - 150px )
+			transition: all linear .1s
+			left: 0
+			transform: translateY(50%)
+			border-radius: 8px 8px 0 0
+			&::before
+				content: ''
+				display: block
+				width: 88px
+				height: 4px
+				border-radius: 4px
+				background-color: var(--haiti-15)
+				position: absolute
+				top: 8px
+				left: 50%
+				transform: translateX(-50%)
+				pointer-events: none
+
+		.btn
+			margin-top: 30px
+			width: 100%
+
+		&-footer
+			a
+				order: 2
+				font-weight: 400
+
+			& > div
+				order: 1
+				min-width: 100%
+				gap: 8px
+				a:first-child
+					margin-right: auto
+
+		&.active
+			.modal
+				&-content
+					transform: translateY(0%)

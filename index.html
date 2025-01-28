@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Максим Доронин</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+	<meta name="theme-color" content="#7E8796">
+
+	<link rel="shortcut icon" href="favicon.svg" type="image/svg">
+</head>
+
+<body id="home">
+
+	<main>
+		<section class="hero is_active" data-tab="01">
+			<header class="header">
+				<div class="container fx-ac">
+					<a href="#" class="logo">
+						<picture>
+							<source media="(min-width: 992px)" srcset="img/logo.svg">
+							<img src="img/logo-mob.svg" alt="Максим Доронин">
+						</picture>
+					</a>
+					<nav class="header-nav fx-ac">
+						<a href="#">Кейсы</a>
+						<a href="#">Заказать</a>
+						<a href="#">Цены</a>
+					</nav>
+					<button class="header-btn" title="Меню"><span></span></button>
+				</div>
+
+				<div class="header-menu">
+					<div class="container">
+						<ul class="header-list fx-col fx-as">
+							<li><a href="#home">Главная</a></li>
+							<li><a href="#">Кейсы</a></li>
+							<li><a href="#">Заказать</a></li>
+							<li><a href="#">Цены</a></li>
+							<li><a href="#">Писатель и аристократка</a></li>
+							<li><a href="#">Robots in us</a></li>
+							<li><a href="#">Фортепианная</a></li>
+							<li><a href="#">Passarola</a></li>
+							<li><a href="#">Max D’ark</a></li>
+							<li><a href="#">Макс Ронин</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<div class="container hero-content fx-w fx-ac">
+				<div class="col fx-col">
+					<div class="tab-content is_active" data-tab="01">
+						<p class="hero__author h4">Максим Доронин</p>
+						<h1>
+							Музыка встречает бизнес<br class="mob-hide">
+							– создавая гармонию успеха!
+						</h1>
+						<p>
+							Максим Доронин — международный предприниматель и композитор, который с детства погружён в
+							мир
+							музыки, включая электронную и классическую. Он с отличием окончил EMBA в Париже и получил
+							специальность в области мобильной и радиосвязи в Москве. Максим разрабатывает уникальные
+							музыкальные проекты для инновационных компаний, создавая классические мюзиклы и
+							разнообразные
+							музыкальные жанры. Его творчество, вдохновлённое богатым культурным наследием семьи, члены
+							которой являются художниками и поэтами, сочетает страсть к музыке с глубоким пониманием
+							бизнеса
+							— он сам пишет либретто, тексты песен и музыку.
+						</p>
+					</div>
+
+					<div class="tab-content hero-dop fx-ae" data-tab="02">
+						<div class="tab-col">
+							<p class="hero__author h4">Максим Доронин</p>
+							<p class="hero-dop__descr">
+								Международный предприниматель и композитор, который с детства погружён в мир музыки,
+								включая
+								электронную и классическую. Он с отличием окончил EMBA в Париже и получил специальность
+								в
+								области мобильной и радиосвязи в Москве.
+							</p>
+							<p class="t-lg hero-dop__subhead">Подпишитесь на новости чтобы быть первым слушателем новой
+								музыки</p>
+							<form>
+								<input type="text" required placeholder="Введи свою электронную почту">
+								<button type="submit" class="btn --outline">Отправить</button>
+							</form>
+						</div>
+						<img src="img/maks-2.png" class="hero-dop__img" alt="i" loading="lazy">
+					</div>
+
+					<div class="hero-row">
+						<div class="fx-ac hero-footer">
+							<a href="#" class="btn">Заказать песню</a>
+							<p>Заказать песню, музыкальный проект, живое выступление</p>
+						</div>
+
+						<div class="toggler fx-js">
+							<button data-toggle="01" class="btn is_active">Обо мне</button>
+							<button data-toggle="02" class="btn">Музыка</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="hero-list" data-tab="02">
+					<h2>Музыка</h2>
+					<div class="player">
+						<ol class="playlist">
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Гармония человека</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Human Harmony</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Гармония человека</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Human Harmony</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Гармония человека</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Human Harmony</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Гармония человека</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+							<li data-src="songs/Bad-Robot.mp3">
+								<img class="s-cover" src="img/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Human Harmony</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play"></button>
+							</li>
+						</ol>
+						<div class="player-controls fx-ac">
+							<img src="img/cover.jpg" alt="Cover" class="s-cover-current current-cover">
+							<div class="player-info">
+								<div class="current-name s-name">Гармония человека</div>
+								<div class="current-author s-author">Максим Доронин</div>
+
+								<div class="progress-container">
+									<div class="progress-bar"><span></span></div>
+								</div>
+								<div class="fx-ac">
+									<div class="player-btns fx-ac">
+										<button class="player__btn player-prev"></button>
+										<button class="player__btn player-pause"></button>
+										<button class="player__btn player-next"></button>
+									</div>
+									<a href="#" download="#" class="player__btn player-download"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<audio class="audio" preload="metadata"></audio>
+				</div>
+
+				<div class="features is_active fx-as fx-jb" data-tab="01">
+					<img src="img/main-mob.jpg" class="features__img" loading="lazy" alt="i">
+					<div class="item">
+						<p class="item__heading h5">Студийная работа</p>
+						<p>
+							Я предпочитаю сосредоточиться на создании музыки в студии, где могу полностью выразить свои
+							идеи и эмоции. Это позволяет мне создавать качественные альбомы, которые вы можете услышать
+							и оценить.
+						</p>
+					</div>
+					<div class="item">
+						<p class="item__heading h5">Планы на будущее</p>
+						<p>
+							Хотя я в основном работал в студии, у меня есть планы на будущее, включая живые выступления.
+							Я хочу делиться своей музыкой с вами вживую и создать уникальный опыт для всех
+						</p>
+					</div>
+					<div class="item">
+						<p class="item__heading h5">Индивидуальный подход</p>
+						<p>
+							Каждый артист имеет свой путь. Я выбрал путь создания музыки, которая будет говорить сама за
+							себя, и теперь готов делиться ею с вами
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="cases" id="cases">
+			<div class="container">
+				<h2>кейсы</h2>
+
+				<div class="case">
+					<h3>Бизнес-кейс: Музыкальное оформление документального фильма "Ачикольские озера"</h3>
+					<div class="wrap fx-ac">
+						<img class="case-cover" src="img/cover-1.png" alt="i" loading="lazy">
+						<ul class="case-title fx">
+							<li>
+								<span class="head">Клиент:</span>
+								<span class="text">телеканал Вкус жизн</span>
+							</li>
+							<li>
+								<span class="head">Исполнитель:</span>
+								<span class="text">Максим Дорони</span>
+							</li>
+							<li>
+								<span class="head">Объем работы:</span>
+								<span class="text">Музыкальное оформление в классическом стиле</span>
+							</li>
+							<li>
+								<span class="head">Длительность:</span>
+								<span class="text">34 минут</span>
+							</li>
+							<li>
+								<span class="head">Формат:</span>
+								<span class="text">Игра на рояле, студийная запис</span>
+							</li>
+						</ul>
+					</div>
+					<h3>Описание проекта:</h3>
+					<p>Задача — создать атмосферное музыкальное оформление для документального фильма, усиливающее
+						визуальную и эмоциональную составляющую.</p>
+
+					<hr>
+
+					<h3>Ход выполнения:</h3>
+					<ul class="fx">
+						<li>
+							<span class="head">Соглашение и предоплата:</span>
+							<span class="text">Подписано соглашение, предоплата ____ рублей</span>
+						</li>
+						<li>
+							<span class="head">Запись музыки:</span>
+							<span class="text">34 минуты оригинальной музыки записаны в студии</span>
+						</li>
+						<li>
+							<span class="head">Передача прав:</span>
+							<span class="text">Права на использование музыки переданы продюсеру</span>
+						</li>
+					</ul>
+
+					<hr>
+
+					<div class="wrapper fx-as fx-jb">
+						<div class="col">
+							<h3>Финансовые показатели:</h3>
+							<ul class="fx">
+								<li>
+									<span class="head">Сумма от заказчика:</span>
+									<span class="text">____ рублей</span>
+								</li>
+								<li>
+									<span class="head">Расходы:</span>
+									<span class="text">____ рублей</span>
+								</li>
+								<li>
+									<span class="head">Съемочная группа и монтаж:</span>
+									<span class="text">____ рублей</span>
+								</li>
+								<li>
+									<span class="head">Оплата композитору:</span>
+									<span class="text">____ рублей</span>
+								</li>
+								<li>
+									<span class="head">Чистая прибыль:</span>
+									<span class="text">____ рублей</span>
+								</li>
+							</ul>
+						</div>
+						<div class="col">
+							<h3>Дополнительные доходы:</h3>
+							<p>
+								<b>Права на показ фильма уступлены телевидению, обеспечившие дополнительный доход.</b>
+							</p>
+							<h3 class="mt">Результаты:</h3>
+							<p>
+								Положительные отзывы на музыку от продюсера и зрителей.
+								<br>
+								<br>
+								Укрепление репутации Доронина как композитора
+								<br>
+								<br>
+								Привлечение новых клиентов
+							</p>
+						</div>
+					</div>
+
+					<hr>
+
+					<h3>Выводы: </h3>
+					<p>Проект продемонстрировал значимость музыки в документальном кино и потенциал Макса Доронина как
+						композитора, способствуя увеличению доходов и расширению бизнеса.</p>
+
+
+				</div>
+
+				<div class="case">
+					<h3>Бизнес-кейс: Сотрудничество Доронина и Unicosmo</h3>
+
+					<div class="wrap fx-ac">
+						<img class="case-cover" src="img/cover-2.png" alt="i" loading="lazy">
+						<div class="title">
+							<h3>Введение: </h3>
+							<p>Доронин предоставил 45 минут оригинальной электронной музыки в стиле Passarola для
+								Unicosmo за ____ рублей, подчеркивая ценность музыки в брендинге.</p>
+							<h3 class="mt">Цель: </h3>
+							<p>Обосновать выгоды для Доронина и владельца Unicosmo, а также оценить финансовые и
+								стратегические аспекты сотрудничества.</p>
+						</div>
+					</div>
+					<hr class="mob-show">
+					<h3>Описание сделки: </h3>
+					<p>
+						<b>Стороны: Доронин (композитор) и владелец Unicosmo. </b> <br> <br>
+						Стоимость: ____ рублей. Авторские права остаются у Доронина; смежные права передаются владельцу
+						бизнеса.
+					</p>
+					<hr>
+					<h3>Обоснование: </h3>
+					<div class="double fx-as fx-jb">
+						<div class="col">
+							<p><b>Для Доронина: </b></p>
+							<ul>
+								<li>- Финансовая выгода: ____ рублей. </li>
+								<li>- Закрепление репутации как профессионала. </li>
+								<li>- Долгосрочные роялти.</li>
+							</ul>
+						</div>
+						<div class="col">
+							<p><b>Для владельца бизнеса: </b></p>
+							<ul>
+								<li>- Привлечение клиентов через уникальный контент. </li>
+								<li>- Повышение ценности продукта. </li>
+								<li>- Выделение на рынке.</li>
+							</ul>
+						</div>
+					</div>
+					<hr>
+					<h3>Рынок: </h3>
+					<p>
+						Косметическая индустрия активно использует музыку для маркетинга, что создает возможности для
+						сотрудничества.
+						<br>
+						<br>
+						<b>RCM: </b>
+					</p>
+					<div class="triple fx-ac fx-jb">
+						<div class="col">
+							<p>Риски: </p>
+							<p>- Негативное восприятие музыки целевой аудиторией.</p>
+						</div>
+						<div class="col">
+							<p>Вызовы:  </p>
+							<p>- Конкуренция и необходимость адаптации контента</p>
+						</div>
+						<div class="col">
+							<p>Управление: </p>
+							<p>- Обратная связь от клиентов и гибкость в адаптации</p>
+						</div>
+					</div>
+					<p><b>Заключение: </b></p>
+					<p>
+						Сотрудничество выгодно обеим сторонам, демонстрируя важность интеграции музыки в маркетинг и её
+						влияние на успех бизнеса.
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/player.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+
+</html>

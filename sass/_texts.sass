@@ -1,0 +1,131 @@
+h1,h2,h3,h4,h5,h6
+	font-family: 'Bebas Neue', sans-serif
+
+h1,.h1, h2, .h2
+	text-transform: uppercase
+	font-size: 54px
+	font-weight: 400 !important
+	line-height: 64.8px
+
+h3,.h3
+	font-size: 34px
+	line-height: 40.8px
+
+h4,.h4
+	font-size: 24px
+	line-height: 29.26px
+
+h5,.h5
+	font-size: 20px
+	font-weight: 600
+	line-height: 22px
+
+.t
+	&-lg
+		font-size: 18px
+		font-weight: 600
+		line-height: 21.94px
+
+a, button
+	color: inherit
+	text-decoration: none
+	box-sizing: border-box
+	transition: all ease .3s
+	background-color: transparent
+	&:active
+		transform: scale(.98)
+
+mark
+	background-color: rgba(0, 0, 0, 0)
+	color: var(--fuchsia)
+
+p
+	&:last-child
+		margin-bottom: 0 !important
+
+.btn
+	font-size: 20px
+	font-weight: 700
+	line-height: 22px
+	text-align: center
+	white-space: nowrap
+	border-radius: 40px
+	background-color: var(--prime)
+	color: var(--white)
+	padding: 13px 40px
+
+	&:hover
+		background-color: #423EA7
+
+	&.--dark
+		background-color: var(--haiti)
+		&:hover
+			background-color: var(--haiti-hover)
+
+		&:active
+			background-color: var(--haiti-pressed)
+
+	&.--light
+		color: var(--fuchsia)
+		background-color: var(--white)
+		border: 2px solid var(--gray-violet)
+		&::after
+			background-position: left bottom
+		&.--arr::after
+			background-position: left -24px bottom
+
+		&:hover
+			background-color: var(--white-hover)
+		&:active
+			background-color: var(--white-pressed)
+
+	&.--outline
+		border: 1px solid #fff
+		background-color: rgba(0, 0, 0, 0)
+
+	&:disabled, &.disabled
+		border-color: var(--haiti-15)
+		background-color: var(--haiti-15)
+		pointer-events: none
+
+.toggler
+	margin: 30px 0
+	&>*
+		border-radius: 0
+		backdrop-filter: blur(12px)
+		border: 1px solid #FFFFFF33
+		&:first-child
+			border-right: none
+			border-radius: 40px 0 0 40px
+
+		&:last-child
+			border-left: none
+			border-radius: 0 40px 40px 0
+
+		// &:not(:hover),
+		&:not(.is_active)
+			background-color: transparent
+			background: linear-gradient(90deg, rgba(94, 89, 215, 0.1) 0%, rgba(155, 29, 159, 0.1) 100%)
+
+		&.is_active
+			// pointer-events: none
+			cursor: not-allowed
+
+	@media screen and ( max-width: 992px )
+		width: 100%
+		margin-bottom: 0
+		&>*
+			min-width: 50%
+
+@media screen and ( max-width: 720px )
+	h4,.h4
+		font-size: 22px
+		line-height: 26.82px
+
+	h1,.h1, h2, .h2
+		font-size: 44px
+		line-height: 52.8px
+
+	h3,.h3
+		font-size: 32px
+		line-height: 38.4px

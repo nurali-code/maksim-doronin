@@ -1,0 +1,140 @@
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+	border: none
+	outline: none
+
+html
+	scroll-behavior: smooth
+
+:root
+	--prime: #5E59D7
+	--white: #FFFFFF
+	--bg: #7E8796
+	--paddingContainer: 15px
+
+body
+	color: var(--white)
+	background-color: var(--bg)
+	font-family: "Montserrat", sans-serif
+	font-stretch: normal
+	font-optical-sizing: auto
+	font-style: normal
+	position: relative
+	&.overflow,
+	&.is_active
+		overflow: hidden
+
+.container
+	max-width: 1200px
+	width: 100%
+	margin: 0 auto
+	padding: 0 var(--paddingContainer)
+
+p
+	line-height: 22px
+	font-weight: 300
+	font-size: 16px
+
+.tb
+	&-hide
+		@media screen and ( max-width: 991px )
+			display: none !important
+
+	&-show
+		@media screen and ( min-width: 991px )
+			display: none !important
+.pc
+	&-hide
+		@media screen and ( min-width: 991px )
+			display: none !important
+.mob
+	&-hide
+		font-style: normal
+		@media screen and ( max-width: 720px )
+			display: none !important
+	&-show
+		font-style: normal
+		@media screen and ( min-width: 720px )
+			display: none !important
+
+img
+	display: block
+	max-width: 100%
+
+[class^="fx-"],
+[class*=" fx-"],
+.playlist li
+	display: flex
+
+.g
+	&-16
+		gap: 16px
+
+input, textarea, select
+	padding: 0 22px
+	height: 50px
+	display: block
+	width: 100%
+	margin: 0 0 12px
+	border: 1px solid #FFFFFF33
+	border-radius: 40px
+	font-size: 16px
+	font-weight: 500
+	line-height: 19.5px
+	transition: all .3s ease
+	color: var(--white)
+	background-color: rgba(0, 0, 0, 0)
+
+	&::placeholder
+		color: #fff
+
+	&:focus,
+	&:hover
+
+	&:placeholder-shown
+		border-color: var(--haiti-50)
+
+textarea
+	resize: none
+	padding-top: 20px
+	padding-bottom: 20px
+	-ms-overflow-style: none
+	scrollbar-width: none
+	&::-webkit-scrollbar
+		display: none
+		width: 0
+		height: 0
+
+	&:last-of-type
+		margin-bottom: 0 !important
+
+.fx
+	&-ac
+		align-items: center
+	&-jc
+		justify-content: center
+	&-col
+		flex-direction: column
+	&-w
+		flex-wrap: wrap
+	&-as
+		align-items: flex-start
+	&-jb
+		justify-content: space-between
+	&-ae
+		align-items: end
+
+@keyframes deg360
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+
+@media screen and ( max-width: 720px )
+
+	textarea
+		padding: 20px 24px 10px
+		height: 80px
