@@ -14,6 +14,9 @@ html
 	--bg: #7E8796
 	--paddingContainer: 15px
 
+.hidden
+	display: none
+
 body
 	color: var(--white)
 	background-color: var(--bg)
@@ -31,6 +34,8 @@ body
 	width: 100%
 	margin: 0 auto
 	padding: 0 var(--paddingContainer)
+	position: relative
+	z-index: 1
 
 p
 	line-height: 22px
@@ -100,6 +105,32 @@ input, textarea, select
 input
 	&::-webkit-calendar-picker-indicator
 		display: none
+
+.play__btn
+	display: block
+	&-ic
+		display: block
+		width: 100px
+		border-radius: 50%
+		margin: 0 auto 12px
+		aspect-ratio: 1
+		background-color: #2BDEED4D
+		border: 1px solid #2BDEED
+		.ic
+			margin-top: 14px
+			width: 70px
+			padding: 20px 19px 20px 22px
+			height: 70px
+			border-radius: 50%
+			background-color: #2BDEED
+
+	span
+		font-size: 20px
+		font-weight: 700
+		line-height: 22px
+		text-align: left
+		text-decoration-line: underline
+		display: block
 
 select
 	background-repeat: no-repeat
