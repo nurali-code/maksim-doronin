@@ -57,13 +57,21 @@ p
 	&:hover
 		background-color: #423EA7
 
-	&.--dark
-		background-color: var(--haiti)
+	&.--gold
+		color: #000
+		background: linear-gradient(90deg, #B1916B 0%, #FDEAB1 100%)
+
 		&:hover
-			background-color: var(--haiti-hover)
+			background: linear-gradient(90deg, #B1916B 0%, #FDEAB1 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2))
 
 		&:active
 			background-color: var(--haiti-pressed)
+
+	&.--md
+		font-size: 18px
+		font-weight: 700
+		line-height: 22px
+		padding: 17px 40px 15px
 
 	&.--light
 		color: var(--fuchsia)

@@ -238,7 +238,7 @@
 						<ul class="case-title fx">
 							<li>
 								<span class="head">Клиент:</span>
-								<span class="text">телеканал Вкус жизн</span>
+								<span class="text">телеканал "Вкус жизни"</span>
 							</li>
 							<li>
 								<span class="head">Исполнитель:</span>
@@ -407,6 +407,55 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="request">
+			<div class="container">
+				<h2>Форма заказа музыкального проекта</h2>
+				<p class="request__text">Пожалуйста, заполните форму ниже для заказа песни, музыкального проекта или
+					живого выступления:</p>
+				<form action="#" class="--gold fx-as fx-w">
+					<div class="fx-col">
+						<select>
+							<option hidden>Выберите стиль</option>
+							<option>Выберите</option>
+						</select>
+						<select>
+							<option hidden>Тип заказа</option>
+							<option>Выберите</option>
+						</select>
+						<div class="inp-wrap">
+							<label for="inpDate">Укажите желаемую дату:</label>
+							<img src="img/date.svg" alt="i">
+							<input required type="date" name="date" id="inpDate">
+						</div>
+						<div class="inp-wrap">
+							<img src="img/time.svg" alt="i">
+							<input required type="time"  placeholder="00:00">
+						</div>
+						<div class="inp-wrap">
+							<img src="img/location.svg" alt="i">
+							<input type="text" placeholder="Москва">
+						</div>
+					</div>
+
+					<div class="fx-col">
+						<div class="inp-wrap">
+							<label for="inpDate">Ваши контактные данные:</label>
+							<input type="text" placeholder="Имя">
+						</div>
+						<input type="tel" placeholder="+7 ___-___-__-__">
+						<input type="email" placeholder="Email">
+						<input type="text" placeholder="WhatsApp">
+						<input type="text" placeholder="Telegram">
+
+					</div>
+					
+					<button type="submit" class="btn --gold --md">Отправить</button>
+				</form>
+				<img src="img/req-text.svg" alt="i" loading="lazy" class="request__ic">
+			</div>
+		</section>
+
 	</main>
 
 	<script src="js/jquery.min.js"></script>

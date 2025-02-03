@@ -86,6 +86,7 @@ input, textarea, select
 	transition: all .3s ease
 	color: var(--white)
 	background-color: rgba(0, 0, 0, 0)
+	appearance: none
 
 	&::placeholder
 		color: #fff
@@ -95,6 +96,14 @@ input, textarea, select
 
 	&:placeholder-shown
 		border-color: var(--haiti-50)
+
+input
+	&::-webkit-calendar-picker-indicator
+		display: none
+
+select
+	background-repeat: no-repeat
+	background-position: center right 20px
 
 textarea
 	resize: none
@@ -109,6 +118,33 @@ textarea
 
 	&:last-of-type
 		margin-bottom: 0 !important
+
+form
+	&.--gold
+		label
+			color: rgba(255, 255, 255, .6)
+
+		input, textarea, select
+			font-size: 18px
+			font-weight: 400
+			line-height: 21.94px
+
+			height: 54px
+			background-color: #0B141D
+			border-radius: 12px
+			border: 1px solid #FDEAB1
+			&::placeholder
+				color: rgba(255, 255, 255, .6)
+
+			&:hover,
+			&:focus
+				background-color: #090F15
+
+		select
+			background-image: url('../img/arr-down.svg')
+
+		.btn
+			border-radius: 12px
 
 .fx
 	&-ac
@@ -126,14 +162,39 @@ textarea
 	&-ae
 		align-items: end
 
+.inp
+	&-wrap
+		position: relative
+		z-index: 1
+		img
+			position: absolute
+			bottom: 15px
+			width: 22px
+			aspect-ratio: 1
+			z-index: 11
+			left: 20px
+			& ~ *
+				padding-left: 56px
+
+section
+	padding: 100px 0
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
 @keyframes deg360
 	0%
 		transform: rotate(0deg)
 	100%
 		transform: rotate(360deg)
 
+@media screen and ( max-width: 992px )
+	section
+		padding: 80px 0
 
 @media screen and ( max-width: 720px )
+	section
+		padding: 60px 0
 
 	textarea
 		padding: 20px 24px 10px
