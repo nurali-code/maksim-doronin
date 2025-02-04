@@ -409,7 +409,7 @@
         max-width: 90%
         margin-bottom: 40px
 
-    &-wrap 
+    &-wrap
         gap: 20px
 
     .play__btn
@@ -418,7 +418,7 @@
     &-player
         width: 100%
         max-width: 524px
-        margin: 0 
+        margin: 0
         .ic
             fill: #1C394A !important
 
@@ -463,12 +463,31 @@
         object-fit: contain
         object-position: bottom right
 
-    &__descr 
+    &__descr
         width: fit-content
         color: #108994
         gap: 12px
         margin: 12px 0 0
 
     @media screen and ( max-width: 992px )
-        display: none
-        
+        padding-bottom: 100vw
+        &__text
+            max-width: 100%
+
+        &__descr
+            margin: 30px auto 0
+
+        .play__btn
+            margin: 30px auto 0
+
+        &-wrap
+            display: block
+
+        &-player
+            max-width: 100%
+            width: 100%
+
+        &__bg
+            width: 160%
+            right: -15%
+            max-width: unset

@@ -72,7 +72,6 @@
             border-radius: 10px
             background: #858585
 
-
     li
         padding: 16px 14px
         border-radius: 30px
@@ -106,12 +105,6 @@
     li:hover
         background-color: #87919D
 
-    .controls
-        flex: 1
-        padding: 10px
-        background: #6200ea
-        color: white
-
     .progress
         &-container
             display: flex
@@ -141,10 +134,12 @@
         border-radius: 30px
         gap: 18px
         padding: 20px
-        background-color: #858E9E80
+        background-color: rgba(133,142,158,.8)
 
     @media screen and ( max-width: 720px )
         &-controls
+            position: relative
+            z-index: 1
             padding: 12px
 
         .playlist
@@ -161,3 +156,18 @@
                 &-current
                     width: 58px
                     height: 58px
+
+        .progress-container
+            margin: 17px 0 12px
+
+        .current
+            &-cover
+                left: 12px
+                top: 12px
+                position: absolute
+
+            &-name
+                padding-top: 7px
+            &-name,
+            &-author
+                padding-left: 72px
