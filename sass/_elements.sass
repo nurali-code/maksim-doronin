@@ -78,7 +78,7 @@ img
 		gap: 16px
 
 input, textarea, select
-	padding: 0 22px
+	padding: 0 20px
 	height: 50px
 	display: block
 	width: 100%
@@ -106,23 +106,57 @@ input
 	&::-webkit-calendar-picker-indicator
 		display: none
 
+.link
+	gap: 8px
+	width: fit-content
+
+	font-size: 18px
+	font-weight: 700
+	line-height: 22px
+	text-decoration-line: underline
+
+	&>*
+		margin: 0 !important
+
+blockquote
+	padding: 20px 50px 20px 30px
+	text-align: left
+	border-radius: 30px
+	border: 1px solid #3DD9F680
+	color: rgba(255, 255, 255, .8)
+	gap: 17px
+	font-style: italic
+
+	font-size: 16px
+	font-weight: 400
+	line-height: 22px
+
+	&>*
+		margin: 0 !important
+
+	.ic
+		min-width: 37px
+		width: 37px
+		height: 32px
+
 .play__btn
 	display: block
+	--rgb: 43, 222, 237
 	&-ic
 		display: block
 		width: 100px
 		border-radius: 50%
 		margin: 0 auto 12px
 		aspect-ratio: 1
-		background-color: #2BDEED4D
-		border: 1px solid #2BDEED
+		background-color: rgba(var(--rgb),.3)
+		border: 1px solid rgb(var(--rgb))
 		.ic
 			margin-top: 14px
 			width: 70px
 			padding: 20px 19px 20px 22px
 			height: 70px
 			border-radius: 50%
-			background-color: #2BDEED
+			background-color: rgb(var(--rgb))
 
 	span
 		font-size: 20px
@@ -215,6 +249,13 @@ section
 	overflow: hidden
 	position: relative
 	z-index: 1
+
+.mb
+	&-10
+		margin-bottom: 10px !important
+
+	&-5
+		margin-bottom: 5px !important
 
 @keyframes deg360
 	0%
