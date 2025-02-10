@@ -835,3 +835,168 @@
         &__notes
             width: 100vw
             max-width: unset
+
+.maxdark
+    background-color: #0E0E0E
+    @media screen and ( min-width: 720px )
+        &::before
+            content: ''
+            display: block
+            width: 50%
+            height: 100%
+            position: absolute
+            right: 0
+            top: 0
+            background-image: url('../img/lines-right.png')
+            background-size: unset
+            background-repeat: no-repeat
+            background-position: top right -50px
+            z-index: 3
+            pointer-events: none
+
+    h2, h5, .link, h3,
+    .subheading, .play__btn, .nav a
+        width: fit-content
+        color: #fdeab1
+        background: linear-gradient(90deg, #A49263 0%, #EEDD96 50%, #C4A65A 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: rgba(0, 0, 0, 0)
+
+    .headline
+        font-family: "Montserrat", sans-serif
+        font-weight: 700
+        margin-bottom: 12px
+
+    h2
+        text-align: center
+        font-weight: 300
+        margin-bottom: 40px
+        b
+            font-weight: 400 !important
+
+    .link
+        text-decoration-color: #C4A65A
+        .ic
+            fill: #fdeab1
+
+    p
+        margin-bottom: 16px
+
+    .col
+        max-width: 673px
+        margin-bottom: 50px
+        position: relative
+        z-index: 1
+        &.--first
+            margin-left: auto
+
+        &__img
+            top: 50%
+            right: calc( 100% + 20px )
+            transform: translateY(-50%)
+            position: absolute
+            z-index: -11
+
+        h3
+            max-width: 560px
+            font-size: 36px
+            line-height: 43.2px
+            letter-spacing: 3.2px
+            margin-bottom: 14px
+
+        &:last-child
+            img
+                position: relative
+                z-index: -1
+                transform-origin: 0 0
+                transform: scale(1.15)
+
+    .play__btn
+        margin: auto auto 0
+        --rgb: 253, 234, 177
+        span
+            text-decoration-color: #C4A65A
+        .ic
+            fill: rgba(41, 41, 41, 1)
+
+    .wrap
+        gap: 20px
+
+    blockquote
+        max-width: 674px
+        border-color: rgba(#fdeab1, .3)
+        margin: 24px 0 50px
+        .ic
+            fill: #fdeab1
+
+    .subheading
+        font-weight: 700
+        font-size: 22px
+        line-height: 22px
+        margin-bottom: 40px
+
+    .nav
+        margin-top: 40px
+        gap: 46px
+        padding-top: 40px
+        border-top: 1px solid #C4A65A
+        a
+            font-weight: 500
+            font-size: 18px
+            line-height: 22px
+            letter-spacing: 0%
+            text-decoration: underline
+            text-decoration-color: #C4A65A
+
+    @media screen and ( max-width: 1500px )
+        &::before
+            width: 1500px
+            left: 50%
+            transform: translateX(-50%)
+
+    @media screen and ( max-width: 1000px )
+        &::before
+            width: 115%
+
+        .wrap
+            display: block
+            margin-bottom: 40px
+
+        .col
+            max-width: 80%
+            &.--first
+                max-width: 60%
+
+            &:last-child
+                margin: 0 auto
+                img
+                    // transform: none
+                    transform-origin: 50% 50%
+                    margin: 0 0 30px
+
+        .nav
+            justify-content: center
+            gap: 30px
+            a
+                font-size: 20px
+                line-height: 22px
+
+    @media screen and ( max-width: 720px )
+        .col
+            max-width: 100%
+            margin-bottom: 30px
+            &__img
+                display: none
+
+            &.--first
+                max-width: 100%
+
+            &:last-child
+                img
+                    transform: scale(1.1)
+
+        .subheading
+            margin-bottom: 26px
+
+        blockquote
+            margin: 20px 0 30px
