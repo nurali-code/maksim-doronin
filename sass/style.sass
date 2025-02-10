@@ -416,9 +416,22 @@
             .fx-col
                 margin-bottom: 20px
 
+.maxdark,
+.maxronin,
 .writer
-    background-color: #141414
-    background-image: url('../img/writer-bg.jpg')
+    h2
+        font-weight: 300
+        text-align: center
+        b
+            margin: 0 auto
+            width: fit-content
+            font-weight: 400 !important
+
+    .link
+        text-decoration-color: #C4A65A
+        .ic
+            fill: #fdeab1
+
     h2, h5, .link, h3,
     .subheading, .play__btn, .nav a
         width: fit-content
@@ -427,9 +440,24 @@
         -webkit-background-clip: text
         -webkit-text-fill-color: rgba(0, 0, 0, 0)
 
+    blockquote
+        border-color: rgba(#fdeab1, .3)
+        .ic
+            fill: #fdeab1
+
+    .play__btn
+        margin: auto auto 0
+        --rgb: 253, 234, 177
+        span
+            text-decoration-color: #C4A65A
+        .ic
+            fill: rgba(41, 41, 41, 1)
+
+.writer
+    background-color: #141414
+    background-image: url('../img/writer-bg.jpg')
+
     &__heading
-        font-weight: 300
-        text-align: center
         margin: 0 auto 18px
         i
             font-style: normal
@@ -523,22 +551,13 @@
         padding: 14px 30px
         width: 44%
         max-width: 538px
-        border-color: rgba(#fdeab1, .3)
         margin: 0
         .ic
-            fill: #fdeab1
             min-width: 26px
             width: 26px
             height: 26px
 
     .play__btn
-        margin: auto auto 0
-        --rgb: 253, 234, 177
-        span
-            text-decoration-color: #C4A65A
-        .ic
-            fill: rgba(41, 41, 41, 1)
-
         @media screen and ( min-width: 1000px )
             position: absolute
             top: -69px
@@ -548,7 +567,6 @@
         .ic
             width: 24px
             height: 24px
-            fill: #fdeab1
 
     .nav
         width: 56%
@@ -1086,30 +1104,13 @@
             z-index: 3
             pointer-events: none
 
-    h2, h5, .link, h3,
-    .subheading, .play__btn, .nav a
-        width: fit-content
-        color: #fdeab1
-        background: linear-gradient(90deg, #A49263 0%, #EEDD96 50%, #C4A65A 100%)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: rgba(0, 0, 0, 0)
-
     .headline
         font-family: "Montserrat", sans-serif
         font-weight: 700
         margin-bottom: 12px
 
     h2
-        text-align: center
-        font-weight: 300
         margin-bottom: 40px
-        b
-            font-weight: 400 !important
-
-    .link
-        text-decoration-color: #C4A65A
-        .ic
-            fill: #fdeab1
 
     p
         margin-bottom: 16px
@@ -1143,23 +1144,12 @@
                 transform-origin: 0 0
                 transform: scale(1.15)
 
-    .play__btn
-        margin: auto auto 0
-        --rgb: 253, 234, 177
-        span
-            text-decoration-color: #C4A65A
-        .ic
-            fill: rgba(41, 41, 41, 1)
-
     .wrap
         gap: 20px
 
     blockquote
         max-width: 674px
-        border-color: rgba(#fdeab1, .3)
         margin: 24px 0 50px
-        .ic
-            fill: #fdeab1
 
     .subheading
         font-weight: 700
@@ -1232,6 +1222,96 @@
 
         blockquote
             margin: 20px 0 30px
+
+.maxronin
+    background-image: linear-gradient(150.74deg, #070707 5.21%, #151515 100.18%)
+    h2
+        margin-bottom: 46px
+    .img
+        position: relative
+        z-index: 1
+        width: 34.8%
+
+    .title
+        width: 60.1%
+        position: relative
+        z-index: 1
+        &.--second
+            p
+                margin-bottom: 50px
+
+        &__ic
+            position: absolute
+            top: 50%
+            left: 105%
+            transform: translateY(-50%)
+
+    .wrap
+        margin-bottom: 50px
+
+    .headline
+        font-family: "Montserrat", sans-serif
+        font-weight: 700
+        margin-bottom: 12px
+
+    p
+        margin-bottom: 24px
+
+    .link
+        margin-top: 16px
+
+    blockquote
+        margin: 24px 0 30px
+
+    .play__btn
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 11
+
+    hr
+        margin: 30px 0
+        opacity: .5
+        width: 100%
+        height: 1px
+        background-image: linear-gradient(90deg, #A49263 0%, #EEDD96 51.13%, #C4A65A 102.26%)
+
+    .nav
+        margin-bottom: 40px
+        padding-top: 40px
+        gap: 25px 43px
+        border-top: 1px solid rgba(#fdeab1, .8)
+        a
+            text-decoration: underline
+            text-decoration-color: #fdeab1
+            font-weight: 500
+
+    @media screen and ( max-width: 720px )
+        .wrap
+            flex-direction: column-reverse
+            gap: 40px
+            margin: 0
+
+        .img
+            position: relative
+            z-index: 1
+            &__ic
+                position: absolute
+                top: -40px
+                right: -50px
+                max-width: 52%
+
+        &__img
+            position: relative
+            left: -10%
+            max-width: 91%
+
+        .play__btn
+            bottom: 60px
+
+        .img,
+        .title
+            width: 100%
 
 .price
     h2
