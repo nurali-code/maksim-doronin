@@ -416,6 +416,232 @@
             .fx-col
                 margin-bottom: 20px
 
+.writer
+    background-color: #141414
+    background-image: url('../img/writer-bg.jpg')
+    h2, h5, .link, h3,
+    .subheading, .play__btn, .nav a
+        width: fit-content
+        color: #fdeab1
+        background: linear-gradient(90deg, #A49263 0%, #EEDD96 50%, #C4A65A 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: rgba(0, 0, 0, 0)
+
+    &__heading
+        font-weight: 300
+        text-align: center
+        margin: 0 auto 18px
+        i
+            font-style: normal
+
+        @media screen and ( min-width: 720px )
+            b
+                display: flex
+                white-space: nowrap
+                gap: 10px
+                &::before,
+                &::after
+                    content: ''
+                    display: inline-block
+                    width: 50%
+                    height: 1px
+                    background-image: linear-gradient(86.28deg, #B1916B 0%, #FDEAB1 100%)
+                    margin: 0 auto
+                &::before
+                    margin-right: 20px
+                &::after
+                    margin-left: 20px
+
+    &__img
+        border-radius: 30px
+        width: 83%
+        max-width: 538px
+        object-fit: cover
+
+    p, li
+        font-weight: 400
+        font-size: 18px
+        line-height: 28px
+        letter-spacing: 0%
+
+    .subheading
+        position: relative
+        z-index: 1
+        padding: 31px 0 20px 99px
+        img
+            position: absolute
+            left: 0
+            top: 0
+            max-width: unset
+            z-index: -1
+
+    .title
+        padding-left: 180px
+        margin-bottom: 20px
+        p
+            max-width: 93%
+            &:last-child
+                max-width: 43%
+
+    .col
+        position: relative
+        z-index: 1
+        margin-bottom: 50px
+        @media screen and ( min-width: 1000px )
+            max-width: 50.856%
+            img
+                height: 400%
+                position: absolute
+                left: calc( 100% + 40px )
+                top: 96%
+                transform: translateY(-50%)
+
+        .h2
+            margin-bottom: 14px
+
+    .wrap
+        position: relative
+        z-index: 1
+        gap: 40px
+        margin-bottom: 40px
+        .h2
+            margin-bottom: 14px
+
+    ul
+        list-style: none
+        opacity: .8
+        li
+            line-height: 26px
+
+    &__ic
+        position: absolute
+        left: 65%
+        top: 50%
+        transform: translateY(-50%)
+
+    blockquote
+        padding: 14px 30px
+        width: 44%
+        max-width: 538px
+        border-color: rgba(#fdeab1, .3)
+        margin: 0
+        .ic
+            fill: #fdeab1
+            min-width: 26px
+            width: 26px
+            height: 26px
+
+    .play__btn
+        margin: auto auto 0
+        --rgb: 253, 234, 177
+        span
+            text-decoration-color: #C4A65A
+        .ic
+            fill: rgba(41, 41, 41, 1)
+
+        @media screen and ( min-width: 1000px )
+            position: absolute
+            top: -69px
+            right: 0
+
+    .link
+        .ic
+            width: 24px
+            height: 24px
+            fill: #fdeab1
+
+    .nav
+        width: 56%
+        gap: 24px
+        a
+            text-decoration: underline
+            text-decoration-color: #fdeab1
+            font-weight: 500
+
+    @media screen and ( max-width: 1000px )
+        &__heading
+            margin-bottom: 24px
+
+        .subheading
+            padding: 24px 0 0 82px
+            margin-bottom: 22px
+            img
+                object-fit: cover
+                width: calc( 100vw - var(--paddingContainer)*2 )
+                height: 73px
+                object-position: left top
+
+        .title
+            padding: 0
+            margin-bottom: 16px
+            p
+                &:last-child
+                    max-width: 100%
+
+        .writer__img
+            width: 100%
+
+        .col
+            margin-bottom: 40px
+            img
+                margin: 20px auto 0
+
+        .wrap
+            display: block
+            max-width: 700px
+            margin: 0 auto 20px
+            .writer__img
+                margin: 0 auto 40px
+
+        .play__btn
+            margin: 0 auto 30px
+
+        &__ic
+            left: auto
+            right: -91px
+            max-width: 64%
+            top: auto
+            transform: none
+            bottom: -2%
+
+        .wrapper
+            max-width: 700px
+            display: block
+            margin: 0 auto
+
+        blockquote, .nav
+            width: 100%
+            max-width: 100%
+
+        blockquote
+            margin-bottom: 30px
+
+        .nav
+            a
+                font-size: 18px
+                line-height: 20px
+                letter-spacing: 0%
+
+    @media screen and ( max-width: 720px )
+        background-image: url('../img/writer-bg_mob.jpg')
+
+        .subheading
+            padding: 24px 0 0 88px
+
+        &__heading
+            i
+                display: flex
+                white-space: nowrap
+                gap: 20px
+                &::before,
+                &::after
+                    content: ''
+                    display: inline-block
+                    width: 50%
+                    height: 1px
+                    background-image: linear-gradient(86.28deg, #B1916B 0%, #FDEAB1 100%)
+                    margin: 0 auto
+
 .robots
     background-color: #010D25
     background-image: url('../img/robots-bg.jpg'), linear-gradient(90deg, #010D25 0%, #010D25 37.65%, #071A3B 100%)
@@ -666,6 +892,12 @@
         color: #108994
         gap: 12px
         margin: 12px 0 0
+        span
+            border-bottom: 1px solid #108994
+        .ic
+            width: 24px
+            height: 24px
+            fill: #108994 !important
 
     @media screen and ( max-width: 992px )
         padding-bottom: 100vw

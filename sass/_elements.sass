@@ -17,6 +17,10 @@ html
 .hidden
 	display: none
 
+a
+	&:hover
+		opacity: .6
+
 body
 	color: var(--white)
 	background-color: var(--bg)
@@ -152,6 +156,7 @@ blockquote
 		aspect-ratio: 1
 		background-color: rgba(var(--rgb),.3)
 		border: 1px solid rgb(var(--rgb))
+		transition: transform .3s ease
 		.ic
 			margin-top: 14px
 			width: 70px
@@ -167,6 +172,10 @@ blockquote
 		text-align: left
 		text-decoration-line: underline
 		display: block
+
+	@media screen and ( min-width: 992px )
+		&:hover .play__btn-ic
+			transform: scale(1.1)
 
 select
 	background-repeat: no-repeat
