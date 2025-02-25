@@ -1,3 +1,6 @@
+// Указываем путь к worker-файлу
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
 $(document).ready(function () {
     // Итерируем по каждому плееру на странице
     $('.player').each(function () {
@@ -34,6 +37,8 @@ $(document).ready(function () {
             track.addClass('is_active');
             const audioSrc = track.data('src');
             audio.src = audioSrc;
+            const pdfSrc = track.data('src').replace(/\.mp3$/, '.pdf');
+            loadLyricsFromPDF(pdfSrc);
 
             player.find('.current-name').text(track.find('.s-name').text());
             player.find('.current-author').text(track.find('.s-author').text());
@@ -85,6 +90,81 @@ $(document).ready(function () {
             const offsetX = e.offsetX;
             const duration = audio.duration;
             audio.currentTime = (offsetX / progressWidth) * duration;
+        }
+
+        const playerLyrics = player.find('.player-lyrics')
+
+        async function fileExists(url) {
+            try {
+                const response = await fetch(url, { method: 'HEAD' });
+                return response.ok;
+            } catch (error) {
+                console.error("Ошибка при проверке файла:", error);
+                return false;
+            }
+        }
+
+        async function loadLyricsFromPDF(pdfUrl) {
+            const exists = await fileExists(pdfUrl);
+            if (!exists) {
+                playerLyrics.html("Текст отсутствует.");
+                return;
+            }
+
+            fetch(pdfUrl)
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    pdfjsLib.getDocument(new Uint8Array(data)).promise.then(pdf => {
+                        let promises = [];
+
+                        for (let i = 1; i <= pdf.numPages; i++) {
+                            promises.push(
+                                pdf.getPage(i).then(page =>
+                                    page.getTextContent().then(content => {
+                                        let textLines = [];
+                                        let lastY = -1;
+
+                                        content.items.forEach(item => {
+                                            let text = item.str.trim();
+                                            if (text === "") return;
+
+                                            // Проверка на разрыв строки по координате Y
+                                            if (lastY !== -1 && Math.abs(item.transform[5] - lastY) > 10) {
+                                                textLines.push("<br>"); // Один перенос строки
+                                            }
+
+                                            // Добавляем текст строки
+                                            textLines.push(text);
+                                            lastY = item.transform[5]; // Обновляем Y
+                                        });
+
+                                        // Собираем текст из всех строк
+                                        let fullText = textLines.join(" ");
+
+                                        // Убираем пробелы перед знаками препинания
+                                        fullText = fullText.replace(/\s([.,!?;:])/g, "$1");
+
+                                        // Заменяем одинарные переносы на один <br>, а двойные на <br><br>
+                                        fullText = fullText.replace(/<br>\s*<br>/g, "<br><br>");
+
+                                        // Добавляем <br><br> перед словами "Куплет", "Припев", "Бридж" и оборачиваем в <b>
+                                        fullText = fullText.replace(/(Куплет|Припев|Автор|Вступление|Бридж)/g, "<br><b>$1</b>");
+
+                                        return fullText;
+                                    })
+                                )
+                            );
+                        }
+
+                        Promise.all(promises).then(pagesText => {
+                            playerLyrics.html(pagesText.join("<br><br>")); // Разделяем страницы двойным <br>
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error("Ошибка загрузки PDF:", error);
+                    playerLyrics.html("Ошибка загрузки текста.");
+                });
         }
 
         // Загрузка первого трека

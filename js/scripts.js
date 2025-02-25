@@ -44,6 +44,13 @@ $(function () {
 	});
 });
 
+
+$('[data-tab]').on('click', function () {
+	$(this).addClass('is_active').siblings().removeClass('is_active');
+	$('[data-id]').removeClass('is_active')
+	$('[data-id="' + $(this).data('tab') + '"]').addClass('is_active')
+})
+
 $('.connect__btn').on('click', function () {
 	$('.connect-box, .connect__btn').toggleClass('is_active')
 })

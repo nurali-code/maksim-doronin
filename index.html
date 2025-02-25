@@ -7,6 +7,7 @@
 	<title>Максим Доронин</title>
 	<link rel="preload" as="font" href="fonts/BebasNeueRegular.woff" type="font/woff2" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<meta name="theme-color" content="#5E59D7">
 
@@ -14,7 +15,6 @@
 </head>
 
 <body id="home">
-
 	<main>
 		<section class="hero is_active" data-tab="01">
 			<header class="header">
@@ -535,7 +535,7 @@
 				<div class="col">
 					<h3 class="h2">Действующие лица</h3>
 					<p>
-						Пьер — начинающий писатель; Эмма — аристократка, приемная дочь; Анна — ее приемная мать; Жан —
+						Пьер — начинающий писатель; Эмма — Аристократка, приемная дочь; Анна — ее приемная мать; Жан —
 						приемный отец; Анри — брат Анны, компьютерный гений; Луиджи — аристократ с Капри; Габриэль, Реми
 						и Шарлотта — друзья Пьера; Дочь Эммы — результат ее любви с Пьером; Молодой человек дочери Эммы
 						— её возлюбленный; Г-жа Мадлен — директор детского дома; Антуан, Жюли, Сандра и Мари — врачи и
@@ -596,8 +596,10 @@
 						</span>
 					</blockquote>
 					<div class="nav fx-ac fx-w fx-jc">
-						<a href="#" download="скачать синопсис">скачать синопсис</a>
-						<a href="#" download="скачать либретто">скачать либретто</a>
+						<a href="./pdf/Подробный синопсис мюзикла Писатель и аристократка.pdf"
+							download="Подробный синопсис мюзикла Писатель и аристократка»">скачать синопсис</a>
+						<a href="./pdf/ПИСАТЕЛЬ И АРИСТОКРАТКА. Либретто..pdf"
+							download="ПИСАТЕЛЬ И АРИСТОКРАТКА. Либретто.">скачать либретто</a>
 						<a href="#" download="скачать аттрибутику бренда">скачать аттрибутику бренда</a>
 						<a href="#" download="скачать ноты PDF" class="link fx-ac">
 							<span>скачать ноты PDF</span>
@@ -717,14 +719,14 @@
 							</a>
 						</p>
 					</div>
-					<button class="play__btn">
+					<a href="./img/Robots.mp4" data-fancybox="" class="play__btn">
 						<span class="play__btn-ic">
 							<svg class="ic">
 								<use xlink:href="#play"></use>
 							</svg>
 						</span>
 						<span>живое выступление</span>
-					</button>
+					</a>
 				</div>
 				<img src="img/robots-eq.png" alt="i" loading="lazy" class="robots-eq">
 				<nav class="robots-docs fx-ac fx-w fx-jc">
@@ -754,7 +756,7 @@
 				<div class="piano-wrap fx-as">
 					<div class="piano-player player">
 						<ol class="playlist">
-							<li data-src="songs/Bad-Robot.mp3">
+							<li data-src="songs/Paino music/Popurri melodii iz myuzikla.mp3">
 								<img class="s-cover" src="img/cover.jpg" alt="Cover">
 								<p>
 									<span class="s-name">Гармония человека</span>
@@ -1320,7 +1322,7 @@
 							от **50,000** до **120,000** рублей, включая музыкальный элемент и обучающие аспекты
 						</p>
 						<hr>
-						<p class="strong">Песни из мюзикла "Писатель и аристократка" (два отделения по 45
+						<p class="strong">Песни из мюзикла "Писатель и Аристократка" (два отделения по 45
 							минут):</p>
 						<p>**400,000** рублей</p>
 						<hr>
@@ -1340,15 +1342,16 @@
 				<h2 class="h2-lg">Песни и тексты</h2>
 				<h3>Цены на написание песен и музыкальных спектаклей</h3>
 				<div class="tabs fx-ac fx-w">
-					<button class="btn --outline tabs__btn">Все</button>
-					<button class="btn --outline tabs__btn">Макса Ронина</button>
-					<button class="btn --outline tabs__btn">Robots in Us</button>
-					<button class="btn --outline tabs__btn">Макса Д’Арка</button>
-					<button class="btn --outline tabs__btn is_active">Писатель и аристократка</button>
-					<button class="btn --outline tabs__btn">Фортепианная музыка <br class="mob-show"> Максима Доронина</button>
-					<button class="btn --outline tabs__btn">Пассаролы</button>
+					<button class="btn --outline tabs__btn" data-tab="all">Все</button>
+					<button class="btn --outline tabs__btn" data-tab="maxronin">Макса Ронина</button>
+					<button class="btn --outline tabs__btn" data-tab="robots">Robots in Us</button>
+					<button class="btn --outline tabs__btn" data-tab="maxdark">Макса Д’Арка</button>
+					<button class="btn --outline tabs__btn is_active" data-tab="writer">Писатель и Аристократка</button>
+					<button class="btn --outline tabs__btn" data-tab="piano">Фортепианная музыка <br class="mob-show">
+						Максима Доронина</button>
+					<button class="btn --outline tabs__btn" data-tab="piano">Пассаролы</button>
 				</div>
-				<div class="player fx-jb">
+				<div class="player fx-jb is_active" data-id="writer">
 					<div class="playlist-wrap">
 						<ol class="playlist">
 							<li data-src="songs/writer/Bez-slez.mp3">
@@ -1575,14 +1578,147 @@
 						<audio class="audio" preload="metadata"></audio>
 					</div>
 				</div>
+				<div class="player fx-jb" data-id="maxdark">
+					<div class="playlist-wrap">
+						<ol class="playlist">
+							<li data-src="songs/Maxdark/Buza-VA.mp3">
+								<img class="s-cover" src="songs/Maxdark/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Буза VA</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play">
+									<svg class="ic">
+										<use xlink:href="#play"></use>
+									</svg>
+								</button>
+							</li>
+							<li data-src="songs/Maxdark/Mujchina-sup-gotovit.mp3">
+								<img class="s-cover" src="songs/Maxdark/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Мужчина суп готовит.</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play">
+									<svg class="ic">
+										<use xlink:href="#play"></use>
+									</svg>
+								</button>
+							</li>
+							<li data-src="songs/Maxdark/Pronog.mp3">
+								<img class="s-cover" src="songs/Maxdark/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Проноги.</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play">
+									<svg class="ic">
+										<use xlink:href="#play"></use>
+									</svg>
+								</button>
+							</li>
+							<li data-src="songs/Maxdark/Tolstii-koshelek.mp3">
+								<img class="s-cover" src="songs/Maxdark/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Толстый кошелек.</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play">
+									<svg class="ic">
+										<use xlink:href="#play"></use>
+									</svg>
+								</button>
+							</li>
+							<li data-src="songs/Maxdark/Ukatila-ti-v-Janeiro.mp3">
+								<img class="s-cover" src="songs/Maxdark/cover.jpg" alt="Cover">
+								<p>
+									<span class="s-name">Укатила ты в Жанейро.</span>
+									<span class="s-author">Максим Доронин</span>
+								</p>
+								<button class="s-play">
+									<svg class="ic">
+										<use xlink:href="#play"></use>
+									</svg>
+								</button>
+							</li>
+						</ol>
+					</div>
+					<div class="player-controls fx-col">
+						<div class="player-top fx-ac fx-w">
+							<img src="img/cover.jpg" alt="Cover" class="s-cover-current current-cover">
+							<div class="player-info">
+								<div class="player-info-row">
+									<div class="current-name s-name">Гармония человека</div>
+									<div class="current-author s-author">Максим Доронин</div>
+								</div>
+								<div class="player-info-row">
+									<p class="player-info__text">Продолжительность</p>
+									<div class="s-duration b">2:44 </div>
+								</div>
 
+								<div class="player-info-row fx-ac">
+									<div class="player-info-col">
+										<p class="player-info__text">Размер</p>
+										<div class="s-size b">150 мб</div>
+									</div>
+									<div class="player-info-col">
+										<p class="player-info__text">Скачать</p>
+										<a href="#" download="#" class="player__btn player-download">
+											<svg class="ic">
+												<use xlink:href="#download"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="player-row">
+							<div class="player-btns fx-ac fx-jc">
+								<button class="player__btn player-prev">
+									<svg class="ic">
+										<use xlink:href="#prev"></use>
+									</svg>
+								</button>
+								<button class="player__btn player-pause">
+									<svg class="ic">
+										<use xlink:href="#play"></use>
+									</svg>
+								</button>
+								<button class="player__btn player-next">
+									<svg class="ic">
+										<use xlink:href="#next"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="progress-container">
+								<div class="progress-bar"><span></span></div>
+								<div class="fx-jb">
+									<span class="progress-curr">1:22</span>
+									<span class="progress-tot">2:44</span>
+								</div>
+							</div>
+						</div>
+						<p class="player-lyrics__heading">Текст</p>
+						<div class="player-lyrics">
+							Кстати, ключевые особенности структуры проекта лишь добавляют фракционных разногласий и
+							подвергнуты целой серии независимых исследований. Вот вам яркий пример современных тенденций
+							— укрепление и развитие внутренней структуры требует анализа новых принципов формирования
+							материально-технической и кадровой базы. Есть над чем задуматься: акционеры крупнейших
+							компаний являются только методом политического участия и объявлены нарушающими
+							общечеловеческие нормы этики
+						</div>
+						<audio class="audio" preload="metadata"></audio>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/pdf.min.js"></script>
 	<script src="js/player.js"></script>
 	<script src="js/scripts.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
 
 	<svg width="0" height="0" class="hidden">
 		<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="pdf">

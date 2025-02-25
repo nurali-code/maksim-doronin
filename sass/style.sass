@@ -1412,6 +1412,9 @@
             background-color: #2C2C2C
 
     .player
+        &:not(.is_active)
+            display: none
+            
         &>*
             margin: 0
             width: 49%
@@ -1573,7 +1576,7 @@
                 max-height: 390px
                 padding-right: 0
                 padding-bottom: 10px
-                li 
+                li
                     padding: 16px 20px
                 &::before
                     display: none
