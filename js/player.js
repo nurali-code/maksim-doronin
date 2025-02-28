@@ -66,6 +66,7 @@ $(document).ready(function () {
 
         function togglePlay() {
             if (audio.paused) {
+                $('audio').each(function () { this.pause() })
                 audio.play();
                 isPlaying = true;
                 player.find('.playlist li use').attr('xlink:href', '#play');
@@ -148,7 +149,7 @@ $(document).ready(function () {
                                         fullText = fullText.replace(/<br>\s*<br>/g, "<br><br>");
 
                                         // Добавляем <br><br> перед словами "Куплет", "Припев", "Бридж" и оборачиваем в <b>
-                                        fullText = fullText.replace(/(Куплет|Припев|Автор|Вступление|Бридж)/g, "<br><b>$1</b>");
+                                        fullText = fullText.replace(/(Куплет|Припев|Intro|Введение|Versus|Bridge|Written|Verse|Автор|Вступление|Бридж)/g, "<br><b>$1</b>");
 
                                         return fullText;
                                     })
