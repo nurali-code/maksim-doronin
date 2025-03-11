@@ -198,3 +198,26 @@ $(document).ready(function () {
         });
     });
 });
+
+$('[data-tab]').on('click', function () {
+    let tab = $(this).data('tab');
+    $(this).addClass('is_active').siblings().removeClass('is_active');
+    $('[data-id]').removeClass('is_active');
+    $('[data-id="' + tab + '"]').addClass('is_active');
+    let firstTrack = null;
+    if (tab === 'all') {
+        $('li[data-src]').fadeIn();
+        firstTrack = $('li[data-src]').first();
+    } else {
+        $('li[data-src]').hide().filter(function () {
+            return $(this).data('src').startsWith('songs/' + tab + '/');
+        }).fadeIn();
+        firstTrack = $('li[data-src]').filter(function () {
+            return $(this).data('src').startsWith('songs/' + tab + '/');
+        }).first().click();
+    }
+    if (firstTrack.length) {
+        $('.player .playlist li').removeClass('is_active');
+        firstTrack.addClass('is_active');
+    }
+});

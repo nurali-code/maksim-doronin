@@ -109,8 +109,6 @@ input
 	&::-webkit-calendar-picker-indicator
 		display: none
 
-
-
 .link
 	gap: 8px
 	width: fit-content
@@ -289,3 +287,24 @@ section
 
 	blockquote
 		padding: 20px 30px 20px 20px
+
+.sroll_up
+	display: none
+	z-index: 999
+	position: fixed
+	bottom: 30px
+	right: 30px
+	width: 56px
+	height: 56px
+	border-radius: 50%
+	background-color: var(--prime)
+	transition: none
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: 40% auto
+	background-image: url(../img/arr_upp.svg)
+	@media screen and (max-width: 720px)
+		right: 20px
+		bottom: 20px
+		width: 40px
+		height: 40px
