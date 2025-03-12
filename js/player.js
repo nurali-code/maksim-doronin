@@ -1,8 +1,6 @@
-// Указываем путь к worker-файлу
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
 $(document).ready(function () {
-    // Итерируем по каждому плееру на странице
     $('.player').each(function () {
         const player = $(this),
             audio = player.find('.audio')[0],
@@ -42,6 +40,11 @@ $(document).ready(function () {
 
             player.find('.current-name').text(track.find('.s-name').text());
             player.find('.current-author').text(track.find('.s-author').text());
+            if ($(player).hasClass('--third')) {
+                $(player).parents('.modal').find('.music-author').text(track.find('.s-author').text());
+                $(player).parents('.modal').find('.music-name').text(track.find('.s-name').text());
+            }
+
             player.find('.current-cover').attr('src', track.find('.s-cover').attr('src'));
             player.find('.player-download').attr('download', track.find('.s-author').text() + ' ' + track.find('.s-name').text());
             player.find('.player-download').attr('href', audioSrc);
@@ -199,25 +202,24 @@ $(document).ready(function () {
     });
 });
 
-$('[data-tab]').on('click', function () {
-    let tab = $(this).data('tab');
+$('.player-show').on('click', function () {
+    $(this).toggleClass('is_active');
+    $(this).parents('.modal').find('.playlist-wrap').fadeToggle();
+
+})
+
+$('[data-nav]').on('click', function () {
+    let nav = $(this).data('nav');
+    const parent = $(this).parents('section');
     $(this).addClass('is_active').siblings().removeClass('is_active');
-    $('[data-id]').removeClass('is_active');
-    $('[data-id="' + tab + '"]').addClass('is_active');
-    let firstTrack = null;
-    if (tab === 'all') {
-        $('li[data-src]').fadeIn();
-        firstTrack = $('li[data-src]').first();
+    $(parent).find('[data-id]').removeClass('is_active');
+    $(parent).find('[data-id="' + nav + '"]').addClass('is_active');
+    if (nav === 'all') {
+        $(parent).find('li[data-src]').fadeIn();
+        $(parent).find('li[data-src]').first().click();
     } else {
-        $('li[data-src]').hide().filter(function () {
-            return $(this).data('src').startsWith('songs/' + tab + '/');
-        }).fadeIn();
-        firstTrack = $('li[data-src]').filter(function () {
-            return $(this).data('src').startsWith('songs/' + tab + '/');
-        }).first().click();
-    }
-    if (firstTrack.length) {
-        $('.player .playlist li').removeClass('is_active');
-        firstTrack.addClass('is_active');
+        $(parent).find('li[data-src]').hide().filter(function () {
+            return $(this).data('src').startsWith('songs/' + nav + '/');
+        }).fadeIn().first().click();
     }
 });

@@ -14,31 +14,30 @@ function compensateForScrollbar() {
 	else if (scrollbarWidth > 0) { $('body').css('margin-right', scrollbarWidth + 'px'); }
 }
 function showModal(id) {
-	hideModals()
 	compensateForScrollbar()
-	$(id).addClass('active');
+	$(id).fadeIn();
 	$('body').addClass('overflow')
 }
 function hideModals() {
-	$('.modal').removeClass('active');
+	$('.modal').fadeOut();
 	compensateForScrollbar()
 	$('body').removeClass('overflow')
 };
 
 $(function () {
-	$('a[href*="#modal-"]').on('click', function (e) {
+	$('a[href="#music"]').on('click', function (e) {
 		e.preventDefault()
 		showModal($(this).attr("href"));
 	});
-	$('.modal__close').on('click', () => { hideModals(); });
+	$('.modal__close').on('click', () => {
+		$('audio').each(function () { this.pause() })
+		hideModals();
+	});
 	$(document).on('click', function (e) {
 		if (!(
 			($(e.target).parents('.modal-content').length) ||
-			($(e.target).parents('.btn').length) ||
-			($(e.target).parents('.connect__btn').length) ||
-			($(e.target).hasClass('menu__link')) ||
-			($(e.target).hasClass('connect__btn')) ||
-			($(e.target).hasClass('btn')) ||
+			($(e.target).parents('.link').length) ||
+			($(e.target).hasClass('link')) ||
 			($(e.target).hasClass('modal-content'))
 		) && $('body').hasClass('overflow')) { hideModals(); }
 	});
@@ -53,6 +52,12 @@ $(document).on('click', function (e) {
 		($(e.target).hasClass('connect'))
 	) && $('.connect__btn').hasClass('is_active')) { $('.connect-box, .connect__btn').toggleClass('is_active') }
 });
+
+$('[data-tab]').on('click', function () {
+	$(this).addClass('is_active').siblings().removeClass('is_active');
+	$('[data-id]').removeClass('is_active')
+	$('[data-id="' + $(this).data('tab') + '"]').addClass('is_active')
+})
 
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 300) { $('.sroll_up').fadeIn(); }
