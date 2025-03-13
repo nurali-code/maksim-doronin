@@ -17,6 +17,8 @@ function showModal(id) {
 	compensateForScrollbar()
 	$(id).fadeIn();
 	$('body').addClass('overflow')
+	const playlist = $('#music .playlist');
+	playlist.animate({ scrollTop: playlist.scrollTop() + $('#music li.is_active').position().top }, 500);
 }
 function hideModals() {
 	$('.modal').fadeOut();

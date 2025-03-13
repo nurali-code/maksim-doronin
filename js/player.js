@@ -24,8 +24,8 @@ $(document).ready(function () {
                 const size = response.headers.get('Content-Length');
                 return size ? (size / (1024 * 1024)).toFixed(2) + ' MB' : 'Неизвестно';
             } catch (error) {
-                console.error('Ошибка получения размера файла:', error);
-                return 'Ошибка';
+                console.error('...', error);
+                return '...';
             }
         }
 
@@ -33,9 +33,9 @@ $(document).ready(function () {
             const track = playlist.eq(index);
             playlist.removeClass('is_active');
             track.addClass('is_active');
-            const audioSrc = track.data('src');
+            const audioSrc = "songs/" + track.data('src');
             audio.src = audioSrc;
-            const pdfSrc = track.data('src').replace(/\.mp3$/, '.pdf');
+            const pdfSrc = "songs/" + track.data('src').replace(/\.mp3$/, '.pdf');
             loadLyricsFromPDF(pdfSrc);
 
             player.find('.current-name').text(track.find('.s-name').text());
@@ -69,13 +69,13 @@ $(document).ready(function () {
 
         function togglePlay() {
             if (audio.paused) {
-                $('audio').each(function () { this.pause() })
+                audisPause()
                 audio.play();
                 isPlaying = true;
                 player.find('.playlist li use').attr('xlink:href', '#play');
                 player.find('.player-pause use, .playlist li.is_active use').attr('xlink:href', '#pause');
             } else {
-                audio.pause();
+                audisPause()
                 player.find('.player-pause use, .playlist li.is_active use').attr('xlink:href', '#play');
                 isPlaying = false;
             }
@@ -202,6 +202,8 @@ $(document).ready(function () {
     });
 });
 
+function audisPause() { $('audio').each(function () { this.pause() }) }
+
 $('.player-show').on('click', function () {
     $(this).toggleClass('is_active');
     $(this).parents('.modal').find('.playlist-wrap').fadeToggle();
@@ -219,7 +221,26 @@ $('[data-nav]').on('click', function () {
         $(parent).find('li[data-src]').first().click();
     } else {
         $(parent).find('li[data-src]').hide().filter(function () {
-            return $(this).data('src').startsWith('songs/' + nav + '/');
+            return $(this).data('src').startsWith(nav + '/');
         }).fadeIn().first().click();
     }
 });
+
+function forBq(el) {
+    audisPause();
+    const trIt = $('#music').find(`[data-src="${el.data('play')}"]`);
+    console.log($(trIt));
+    trIt.click();
+    const aud = $('#music audio')[0];
+    aud.load()
+    $('#music').find('.player-pause').click();
+}
+
+$('[data-play]').on('mouseenter', function () { forBq($(this)) });
+
+if (window.innerWidth <= 992) {
+    $('[data-play]').on('click', function () { forBq($(this)) });
+}
+
+
+
