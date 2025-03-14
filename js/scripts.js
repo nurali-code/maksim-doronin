@@ -4,8 +4,8 @@ $('.header-btn, .header-menu').on('click', function () {
 $('[data-toggle]').on('click', function () {
 	$('[data-toggle]').removeClass('is_active')
 	$(this).addClass('is_active')
-	$("[data-tab]").removeClass('is_active')
-	$(`[data-tab="${$(this).data('toggle')}"]`).addClass('is_active')
+	$("[data-taber]").removeClass('is_active')
+	$(`[data-taber="${$(this).data('toggle')}"]`).addClass('is_active')
 })
 
 function compensateForScrollbar() {
