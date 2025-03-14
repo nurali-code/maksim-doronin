@@ -86,7 +86,7 @@
             display: block
 
         &::before
-            content: "0" counter(custom-counter)
+            content: counter(custom-counter)
             font-family: 'Bebas Neue', sans-serif
             counter-increment: custom-counter
             display: inline-block
@@ -95,6 +95,9 @@
             font-size: 26px
             color: rgba(255, 255, 255, .3)
             font-weight: 500
+
+        &:nth-child(-n+9)::before
+            content: "0" counter(custom-counter)
 
         &.is_active
             background-color: var(--prime)
